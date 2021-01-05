@@ -69,8 +69,9 @@ function HttpStatusAccessory(log, config, api) {
 
 	// POWER
 	this.power_url = this.protocol + "://" + this.ip_address + ":" + this.portno + "/" + this.api_version + "/input/key";
+	this.power_url_on = this.protocol + "://" + this.ip_address + ":" + this.portno + "/" + this.api_version + "/powerstate";
 	this.power_on_body = JSON.stringify({
-		"key": "On"
+		"powerstate": "On"
 	});
 	this.power_off_body = JSON.stringify({
 		"key": "Standby"
@@ -324,7 +325,8 @@ HttpStatusAccessory.prototype = {
 	},
 
 	setPowerState: function(powerState, callback, context) {
-		var url = this.power_url;
+		var url = this.power_url_on;
+		var url2 = this.power_url;
 		var body;
 		var that = this;
 
@@ -383,7 +385,7 @@ HttpStatusAccessory.prototype = {
 		} else {
 			body = this.power_off_body;
 			this.log("setPowerState - Will power off");
-			that.setPowerStateLoop(0, url, body, powerState, function(error, state_power) {
+			that.setPowerStateLoop(0, url2, body, powerState, function(error, state_power) {
 				that.state_power = state_power;
 				if (error) {
 					that.state_power = false;
