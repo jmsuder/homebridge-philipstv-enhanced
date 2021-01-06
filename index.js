@@ -436,7 +436,7 @@ HttpStatusAccessory.prototype = {
 							that.log("%s - Could not parse message: '%s', not updating state", fctname, responseBody);
 						}
 					} catch (e) {
-						that.log("%s - Got non JSON answer - not updating state: '%s'", fctname, responseBody);
+						that.log("%s - Got non JSON answer1 - not updating state: '%s'", fctname, responseBody);
 					}
 				}
 				if (that.state_power != tResp) {
@@ -541,7 +541,7 @@ HttpStatusAccessory.prototype = {
 							that.log("%s - Could not parse message: '%s', not updating state", fctname, responseBody);
 						}
 					} catch (e) {
-						that.log("%s - Got non JSON answer - not updating state: '%s'", fctname, responseBody);
+						that.log("%s - Got non JSON answer2 - not updating state: '%s'", fctname, responseBody);
 					}
 				}
 				if (that.state_ambilight != tResp) {
@@ -636,7 +636,7 @@ HttpStatusAccessory.prototype = {
 							that.log("%s - Could not parse message: '%s', not updating level", fctname, responseBody);
 						}
 					} catch (e) {
-						that.log("%s - Got non JSON answer - not updating level: '%s'", fctname, responseBody);
+						that.log("%s - Got non JSON answer3 - not updating level: '%s'", fctname, responseBody);
 					}
 				}
 				if (that.state_ambilightLevel != tResp) {
@@ -794,7 +794,7 @@ HttpStatusAccessory.prototype = {
 							that.log("%s - Could not parse message: '%s', not updating state", fctname, responseBody);
 						}
 					} catch (e) {
-						that.log("%s - Got non JSON answer - not updating state: '%s'", fctname, responseBody);
+						that.log("%s - Got non JSON answer4 - not updating state: '%s'", fctname, responseBody);
 					}
 				}
 				if (that.state_muted != tResp) {
@@ -838,7 +838,7 @@ HttpStatusAccessory.prototype = {
 							that.log("%s - Could not parse message: '%s', not updating level", fctname, responseBody);
 						}
 					 } catch (e) {
-						that.log("%s - Got non JSON answer - not updating level: '%s'", fctname, responseBody);
+						that.log("%s - Got non JSON answer5 - not updating level: '%s'", fctname, responseBody);
 					}
 				}
 				if (that.state_volume != tResp) {
