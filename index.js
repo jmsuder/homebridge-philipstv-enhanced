@@ -68,8 +68,8 @@ function HttpStatusAccessory(log, config, api) {
 	// Define URL & JSON Payload for Actions
 
 	// POWER
-	this.power_url = this.protocol + "://" + this.ip_address + ":" + this.portno + "/" + this.api_version + "/input/key";
-	this.power_url_on = this.protocol + "://" + this.ip_address + ":" + this.portno + "/" + this.api_version + "/powerstate";
+	this.power_url = this.protocol + "://" + this.ip_address + ":" + this.portno + "/" + this.api_version + "/powerstate";
+	this.power_url_on = this.protocol + "://" + this.ip_address + ":" + this.portno + "/" + this.api_version + "/input/key";
 	this.power_on_body = JSON.stringify({
 		"powerstate": "On"
 	});
@@ -325,8 +325,8 @@ HttpStatusAccessory.prototype = {
 	},
 
 	setPowerState: function(powerState, callback, context) {
-		var url = this.power_url_on;
-		var url2 = this.power_url;
+		var url = this.power_url;
+		var url2 = this.power_url_on;
 		var body;
 		var that = this;
 
