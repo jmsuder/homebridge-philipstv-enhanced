@@ -232,13 +232,13 @@ HttpStatusAccessory.prototype = {
 			body: body,
 			method: method,
 			rejectUnauthorized: false,
-			timeout: 2000
+			timeout: 1000
 		};
 
-		options.followAllRedirects = true;
 
 		// EXTRA CONNECTION SETTINGS FOR API V6 (HTTP DIGEST)
 		if (need_authentication) {
+			options.followAllRedirects = true;
 			options.forever = true;
 			options.auth = {
 				user: this.username,
@@ -349,7 +349,6 @@ HttpStatusAccessory.prototype = {
 				that.log('setPowerState - Sending WOL ' + wol_url);
 				this.wolRequest(wol_url, function(wol_id, error, response) {
 					that.log('setPowerState - WOL callback %s response: %s', wol_id, response);
-					that.log('setPowerState - powerstate attempt, attempt id: ', 8);
 					var send_powerstate = function() {
 						that.setPowerStateLoop(8, url, body, powerState, function(error, state_power) {
 							that.state_power = state_power;
